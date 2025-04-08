@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZapNews</title>
+    <link rel="stylesheet" href="/static/styles.css">
+</head>
+<body>
+    <div class="header">
+        <h1>ZapNews</h1>
+    </div>
+    <div class="navi">
+        <nav>
+            <p>Home</p>
+            <p>Science</p>
+            <p>Technology</p>
+            <p><a href="/login">Login</a></p>
+            <p><a href="/signup">Signup</a></p>
+        </nav>
+    </div>
+    <div class="allfather-container">
+        <div class="infocontainer">
+            <div class="infoscroll">
+                <h2>Faster Than Gossip. Sharper Than Truth. ⚡</h2>
+            </div>
+        </div>
+        
+        <div class="newsgrid">
+            <h1 id="top-header">Top News</h1>
+            <!-- Top 3 News Items -->
+            <div class="top-3">
+                {% for i in range(3) %}
+                <div class="top-3-div">
+                    <a href="{{ news_items[i].link }}" class="news-article" target="_blank">
+                        <h3 class="news-title">{{ news_items[i].title }}</h3>
+                        <span class="news-link">Read more →</span>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+
+            <!-- Top 7 News Items (4-10) -->
+            <div class="top-7">
+                {% for i in range(3, 10) %}
+                <div class="top-7-div">
+                    <a href="{{ news_items[i].link }}" class="news-article" target="_blank">
+                        <h4 class="news-title">{{ news_items[i].title }}</h4>
+                        <span class="news-link">Read more →</span>
+                    </a>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+    <div class="main-footer">
+        fitter
+    </div>
+    
+    <script type="module" src="script.js"></script>
+</body>
+</html>
