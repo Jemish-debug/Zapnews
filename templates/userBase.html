@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>News Preferences</title>
+        <link rel="website icon" type="png" href="/static/Content/logo.png">
+        <link rel="stylesheet" href="{{ url_for('static', filename='userstyle.css') }}">
+        <script src="https://kit.fontawesome.com/0d52fc865e.js" crossorigin="anonymous"></script>
+
+    </head>
+    <body>
+        <div class="parent-header">
+            <div class="header">
+                <img src="/static/Content/logo.png" alt="News App Logo">
+            </div>
+        </div>
+        {% block body %}
+        
+        {% endblock body %}
+    </body>
+</html>

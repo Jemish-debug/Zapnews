@@ -1,4 +1,4 @@
-/* signup.css - Optimized for signup page */
+/* signup.css - Matches preference_filter theme and includes message styling */
 * {
     margin: 0;
     padding: 0;
@@ -6,7 +6,7 @@
 }
 
 body {
-    background-color: #E0E0E0;
+    background-color: #ffffff;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     display: flex;
     justify-content: center;
@@ -21,24 +21,25 @@ body {
 }
 
 .auth-box {
-    background: white;
-    padding: 2.5rem;
+    background: #f9f9f9;
+    padding: 3rem;
     border-radius: 12px;
-    box-shadow: 0 0 30px rgba(0,0,0,0.1);
+    box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
     max-width: 500px;
     margin: 0 auto;
 }
 
 .auth-box h1 {
-    color: #607D8B;
+    color: #2c3e50;
     font-size: 2.5rem;
     margin-bottom: 1rem;
     font-family: Georgia, 'Times New Roman', Times, serif;
 }
 
 .auth-box p {
-    color: #666;
+    color: #444;
     margin-bottom: 2rem;
+    font-size: 0.95rem;
 }
 
 form {
@@ -49,57 +50,71 @@ form {
 
 label {
     font-weight: 600;
-    color: #455A64;
-    font-size: 0.9rem;
+    color: #2c3e50;
+    font-size: 0.95rem;
 }
 
 input {
     padding: 12px;
-    border: 2px solid #CFD8DC;
+    border: 2px solid #ccc;
     border-radius: 6px;
     font-size: 1rem;
     width: 100%;
+    transition: border-color 0.3s;
 }
 
 input:focus {
     outline: none;
-    border-color: #607D8B;
+    border-color: #666;
 }
 
 .btn-primary {
-    background: #607D8B;
+    background: #2c3e50;
     color: white;
     padding: 12px;
     border-radius: 6px;
     font-size: 1.1rem;
+    font-weight: bold;
     cursor: pointer;
     transition: background 0.3s ease;
+    border: none;
 }
 
 .btn-primary:hover {
-    background: #546E7A;
+    background: #1a252f;
 }
 
 .switch-link {
     text-align: center;
     margin-top: 1.5rem;
-    color: #666;
+    color: #444;
 }
 
 .switch-link a {
-    color: #607D8B;
+    color: #2c3e50;
     text-decoration: none;
     font-weight: 600;
     transition: color 0.3s ease;
 }
 
 .switch-link a:hover {
-    color: #455A64;
+    color: #1a252f;
 }
 
-/* Unique to signup page */
 .password-requirements {
     color: #666;
     font-size: 0.85rem;
+    margin-top: -1rem;
+}
+
+.auth-box p.success-message {
+    color: green;
+    font-weight: 600;
+    margin-top: -1rem;
+}
+
+.auth-box p.error-message {
+    color: red;
+    font-weight: 700;
     margin-top: -1rem;
 }

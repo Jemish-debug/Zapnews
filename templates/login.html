@@ -1,27 +1,36 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login</title>
-    <link rel="stylesheet" href="/static/login.css">
-</head>
-<body>
+{% extends "userBase.html" %}
+{% block body %}
     <div class="auth-page">
         <div class="auth-box">
             <h1>Login</h1>
             <p>Access your account to explore the latest news.</p>
-            <form action="{{ url_for('loginValue') }}" method="POST">  <!-- Changed action and method -->
+            
+            <form action="{{ url_for('loginValue') }}" method="POST">
                 <label for="email">Email Address</label>
                 <input type="email" id="email" name="email" placeholder="Enter your email" required>
-                
+
                 <label for="password">Password</label>
                 <input type="password" id="password" name="password" placeholder="Enter your password" required>
-                
+
+                {% if message %}
+                    <p class="{{ 'success-message' if message == 'Login is successful' else 'error-message' }}">
+                        {{ message }}
+                    </p>
+
+                    {% if message == 'Login is successful' %}
+                        <script>
+                            setTimeout(function() {
+                            window.location.href = "{{ url_for('home') }}";
+                            }, 3000);
+                        </script>
+                    {% endif %}
+                {% endif %}
+
+
                 <button type="submit" class="btn-primary">Login</button>
-                <p class="switch-link">Don't have an account? <a href="{{ url_for('signupValue') }}">Sign Up</a>
+
+                <p class="switch-link">Don't have an account? <a href="{{ url_for('signupValue') }}">Sign Up</a></p>
             </form>
         </div>
     </div>
-</body>
-</html>
+{% endblock body %}

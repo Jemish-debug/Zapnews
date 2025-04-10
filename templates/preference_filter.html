@@ -1,0 +1,66 @@
+{% extends "userBase.html" %}
+{% block body %}
+    <div class="parent-container">
+        <div class="box-container">
+            <h2>Select Your News Preferences</h2>
+
+            <!-- Feedback message -->
+            {% if message %}
+                <p class="{{ 'success-message' if 'successfully' in message else 'error-message' }}">
+                    {{ message }}
+                </p>
+                {% if 'successfully' in message|lower %}
+                    <script>
+                        setTimeout(function() {
+                            window.location.href = "{{ url_for('home') }}?name={{ name }}";
+                        }, 3000);  // wait 3 seconds before redirecting
+                        </script>
+                {% endif %}
+
+            {% endif %}
+
+            <form action="/preference_filter" method="POST">
+                <input type="hidden" name="email" value="{{ email }}">
+                <input type="hidden" name="name" value="{{ name }}">
+
+
+                <div class="button-grid">
+                    <label class="preference-option">
+                        <input type="checkbox" name="politics" value="politics" class="hidden-checkbox">
+                        <span class="checkbox-btn">Politics</span>
+                    </label>
+                    <label class="preference-option">
+                        <input type="checkbox" name="science" value="science" class="hidden-checkbox">
+                        <span class="checkbox-btn">Science</span>
+                    </label>
+                    <label class="preference-option">
+                        <input type="checkbox" name="technology" value="technology" class="hidden-checkbox">
+                        <span class="checkbox-btn">Technology</span>
+                    </label>
+                    <label class="preference-option">
+                        <input type="checkbox" name="world" value="world" class="hidden-checkbox">
+                        <span class="checkbox-btn">World</span>
+                    </label>
+                    <label class="preference-option">
+                        <input type="checkbox" name="business" value="business" class="hidden-checkbox">
+                        <span class="checkbox-btn">Business</span>
+                    </label>
+                    <label class="preference-option">
+                        <input type="checkbox" name="health" value="health" class="hidden-checkbox">
+                        <span class="checkbox-btn">Health</span>
+                    </label>
+                    <label class="preference-option">
+                        <input type="checkbox" name="entertainment" value="entertainment" class="hidden-checkbox">
+                        <span class="checkbox-btn">Entertainment</span>
+                    </label>
+                    <label class="preference-option">
+                        <input type="checkbox" name="sports" value="sports" class="hidden-checkbox">
+                        <span class="checkbox-btn">Sports</span>
+                    </label>
+                </div>
+
+                <button type="submit" class="submit-btn">Save Preferences</button>
+            </form>
+        </div>
+    </div>
+{% endblock body %}
