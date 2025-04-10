@@ -20,7 +20,7 @@
                     {% if message == 'Login is successful' %}
                         <script>
                             setTimeout(function() {
-                            window.location.href = "{{ url_for('home') }}";
+                                window.location.href = "{{ url_for('home') }}?email={{ email }}&name={{ name }}";
                             }, 3000);
                         </script>
                     {% endif %}

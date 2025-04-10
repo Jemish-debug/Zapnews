@@ -2,14 +2,12 @@ import mysql.connector
 import re
 
 def loginAuthentication(email, password):
-    # Input validation
     if not email or not password:
-        return "Login not successful: All fields are required."
+        return "Login not successful: All fields are required.", ""
 
-    # Email format check
     email_pattern = r'^[\w\.-]+@[\w\.-]+\.\w+$'
     if not re.match(email_pattern, email):
-        return "Login not successful: Invalid email format."
+        return "Login not successful: Invalid email format.", ""
 
     try:
         con = mysql.connector.connect(
@@ -19,23 +17,21 @@ def loginAuthentication(email, password):
             database="zapnews"
         )
         print("Database connected successfully!")
-
         cur = con.cursor()
 
-        # Parameterized query (safer)
-        sql = "SELECT * FROM signup WHERE emailId = %s AND password = %s"
+        sql = "SELECT name FROM signup WHERE email = %s AND password = %s"
         val = (email, password)
         cur.execute(sql, val)
-
-        result = cur.fetchall()
+        result = cur.fetchone()
 
         if result:
-            return "Login is successful"
+            return "Login is successful", result[0]  # return name as second value
         else:
-            return "Login not successful: Invalid credentials"
-
+            return "Login not successful: Invalid credentials", ""
     except:
-        return "Login not successful: Database error"
+        return "Login not successful: Database error", ""
     finally:
         if con.is_connected():
             con.close()
+            print("Database disconnected")
+

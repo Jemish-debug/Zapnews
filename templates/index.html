@@ -1,34 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>ZapNews</title>
-    <link rel="website icon" type="png" href="/static/Content/logo.png">
-    <link rel="stylesheet" href="/static/styles.css">
-    <script src="https://kit.fontawesome.com/0d52fc865e.js" crossorigin="anonymous"></script>
-</head>
-<body>
-    <div class="parent-header">
-        <div class="header">
-            <img src="/static/Content/logo.png" alt="Xapnews Logo">
-        </div>
-        <div class="navi">
-            <nav>
-                <p>Home</p>
-                <p>About Us</p>
-                <p>Contact Us</p>
-            </nav>
-        </div>
-    </div>
+{% extends "base.html" %}
+{% block body %}
     
     <div class="allfather-container">
         <div class="infocontainer">
             <div class="infoscroll">
-                <h2>Faster Than Gossip. Sharper Than Truth.<span class = "light-emoji"></span>⚡</pre></h2>
+                <h1>Faster Than Gossip. Sharper Than Truth.⚡</h1>
             </div>
             {% if username %}
-                <h2 class="welcome-user">Welcome, {{ username }} 👋</h2>
+                <div style="text-align: center; margin-top: 20px;">
+                    <h2 style="font-size: 2.2rem; font-weight: bold; color: #333;">
+                        Welcome, <span style="color: #1e90ff;">{{ username }}</span> 👋
+                    </h2>
+                    <p style="font-size: 1.1rem; color: #777;">Glad to have you here!</p>
+                </div>
             {% endif %}
 
         </div>
@@ -37,59 +21,32 @@
             <h1 id="top-header">Top News</h1>
             <!-- Top 3 News Items -->
             <div class="top-3">
-                {% for i in range(3) %}
+                {% for article in news_items[:3] %}
                 <div class="top-3-div">
-                    <a href="{{ news_items[i].link }}" class="news-article" target="_blank">
-                        <h3 class="news-title">{{ news_items[i].title }}</h3>
+                    <a href="{{ article.link }}" class="news-article" target="_blank">
+                        <h3 class="news-title">{{ article.title }}</h3>
                         <span class="news-link">Read more →</span>
                     </a>
                 </div>
                 {% endfor %}
             </div>
+            
 
             <!-- Top 7 News Items (4-10) -->
             <div class="top-7">
-                {% for i in range(3, 10) %}
+                {% for article in news_items[3:10] %}
                 <div class="top-7-div">
-                    <a href="{{ news_items[i].link }}" class="news-article" target="_blank">
-                        <h4 class="news-title">{{ news_items[i].title }}</h4>
+                    <a href="{{ article.link }}" class="news-article" target="_blank">
+                        <h4 class="news-title">{{ article.title }}</h4>
                         <span class="news-link">Read more →</span>
                     </a>
                 </div>
                 {% endfor %}
             </div>
         </div>
-    </div>
-    <div class="allfather-footer">
-        <div class="main-footer">
-            <div class="left-section"><img src="/static/Content/logo.png" alt="Logo"></div>
-            <div class="middle-section">
-                <span>Home</span><br>
-                <span>About</span><br>
-                <span>Contact Us</span><br>
-                
-            </div>
-            <div class="right-section">
-                <img src="" alt="">
-                <p>Atharva Patil (Developer)</p>
-                <span class="fa-brands fa-linkedin fa-3x"></span>
-                <span class="fa-brands fa-instagram fa-3x"></span>
-                <span class="fa-brands fa-github fa-3x"></span>
-                <span class="fa-brands fa-whatsapp fa-3x"></span>
-                <br><br>
-                <p>Jemish Koladiya (Developer)</p>
-                <span class="fa-brands fa-linkedin fa-3x"></span>
-                <span class="fa-brands fa-instagram fa-3x"></span>
-                <span class="fa-brands fa-github fa-3x"></span>
-                <span class="fa-brands fa-whatsapp fa-3x"></span>
-            </div>
+        <div class="more-news-wrapper">
+            <a href="{{ url_for('preferencedNews') }}" class="more-news-btn">Explore More News</a>
         </div>
+        
     </div>
-
-    <br>
-    <p class="legal">&copy; 2025 ZapNews⚡. News Faster Than Gossip, Sharper Than Truth.</p>
-    
-    
-    <script type="module" src="script.js"></script>
-</body>
-</html>
+{% endblock body %}    

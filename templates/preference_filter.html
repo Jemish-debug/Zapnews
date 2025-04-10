@@ -12,7 +12,7 @@
                 {% if 'successfully' in message|lower %}
                     <script>
                         setTimeout(function() {
-                            window.location.href = "{{ url_for('home') }}?name={{ name }}";
+                            window.location.href = "{{ url_for('home') }}?email={{ email }}&name={{ name }}";
                         }, 3000);  // wait 3 seconds before redirecting
                         </script>
                 {% endif %}
@@ -30,8 +30,8 @@
                         <span class="checkbox-btn">Politics</span>
                     </label>
                     <label class="preference-option">
-                        <input type="checkbox" name="science" value="science" class="hidden-checkbox">
-                        <span class="checkbox-btn">Science</span>
+                        <input type="checkbox" name="astrology" value="astrology" class="hidden-checkbox">
+                        <span class="checkbox-btn">Astrology</span>
                     </label>
                     <label class="preference-option">
                         <input type="checkbox" name="technology" value="technology" class="hidden-checkbox">

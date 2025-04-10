@@ -25,7 +25,7 @@ def fetchHeadlines():
             articles.append({"title": title, "link": link})
 
     # Save to JSON file
-    with open("data.json", "w", encoding="utf-8") as f:
+    with open("data\\data.json", "w", encoding="utf-8") as f:
         json.dump(articles, f, ensure_ascii=False, indent=4)
 
     print("✅ data.json updated with headlines & links!")
