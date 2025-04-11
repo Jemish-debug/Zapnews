@@ -11,7 +11,6 @@ def get_filtered_news(email):
         )
         cur = con.cursor()
 
-        # ✅ Get all preferences for the user
         cur.execute("""
             SELECT p.category_name
             FROM user_preferences up
@@ -24,11 +23,9 @@ def get_filtered_news(email):
         if not prefs:
             return []
 
-        # ✅ Load all news
         with open("data\\data.json", "r", encoding="utf-8") as f:
             all_news = json.load(f)
 
-        # ✅ Filter based on preferences
         filtered_news = []
         seen_links = set()
 
@@ -42,12 +39,10 @@ def get_filtered_news(email):
                         filtered_news.append(article)
                         seen_links.add(link)
 
-
-        # ✅ Save filtered news to new JSON file
         with open("data\\user_preferenced_news.json", "w", encoding="utf-8") as f:
             json.dump(filtered_news, f, indent=4, ensure_ascii=False)
 
-        print(f"✅ Saved {len(filtered_news)} articles to user_preferenced_news.json")
+        print(f"Saved {len(filtered_news)} articles to user_preferenced_news.json")
 
         return filtered_news
 

@@ -5,11 +5,11 @@ import login
 import signup
 import userpreferences
 import newsFiltration
+import categoryNews
 
 app = Flask(__name__)
 
 fetch.fetchHeadlines()
-
 
 #<-------------- LOGIN FUCNTION -------------->
 @app.route('/', methods=['GET', 'POST'])
@@ -94,7 +94,7 @@ def preferencedNews():
 
     return render_template("preferencedNews.html", news_items=news_items)
 
-
+#<-------------- HOME FUCNTION -------------->
 @app.route('/home')
 def home():
     name = request.args.get('name', '')
@@ -103,7 +103,30 @@ def home():
 
     news_items = newsFiltration.get_filtered_news(email)
     return render_template("index.html", username=name, news_items=news_items)
+#<------------------------------------------------------>
 
+def load_news_from_file(filepath):
+    try:
+        with open(filepath, 'r', encoding='utf-8') as f:
+            return json.load(f)
+    except Exception as e:
+        print(f"❌ Error reading {filepath}:", e)
+        return []
+
+@app.route('/technologyNews')
+def technology():
+    news_items = load_news_from_file('data\\technology_news.json')
+    return render_template('technologyNews.html', category='Technology', news_items=news_items)
+
+@app.route('/politicsNews')
+def politics():
+    news_items = load_news_from_file('data\\politics_news.json')
+    return render_template('politicsNews.html', category='Politics', news_items=news_items)
+
+@app.route('/articlesNews')
+def articles():
+    news_items = load_news_from_file('data\\articles_news.json')
+    return render_template('articlesNews.html', category='Articles', news_items=news_items)
 
 
 

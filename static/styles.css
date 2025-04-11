@@ -419,3 +419,54 @@ body {
     transform: translateY(-2px);
 }
 
+/* CATEGORY NEWS PAGE CSS*/
+.news-container {
+    max-width: 1000px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background: #fff;
+    border-radius: 8px;
+    box-shadow: 0 0 12px rgba(0,0,0,0.05);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 2rem;
+}
+
+.news-card {
+    background-color: #fafafa;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1rem;
+    transition: 0.3s ease;
+}
+
+.news-card:hover {
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    transform: translateY(-4px);
+}
+
+.news-card h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+    color: #222;
+}
+
+.news-link {
+    color: #1e90ff;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.news-link:hover {
+    text-decoration: underline;
+}
+

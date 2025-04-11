@@ -14,14 +14,13 @@
             <img src="/static/Content/logo.png" alt="Zapnews Logo">
         </div>
         <div class="navi">
-            <nav>
-                <p>Home</p>
-                
-                <p>Technology</p>
-                <p>Articles</p>
-                <p>Politics</p>
-                <p>About Us</p>
-                <p>Contact Us</p>
+            <nav class="navbar">
+                <a href="{{ url_for('home') }}">Home</a>
+                <a href="{{ url_for('technology') }}">Technology</a>
+                <a href="{{ url_for('articles') }}">Articles</a>
+                <a href="{{ url_for('politics') }}">Politics</a>
+                <a href="{{ url_for('technology') }}">About Us</a>
+                <a href="{{ url_for('technology') }}">Contact Us</a>
             </nav>
         </div>
     </div>
