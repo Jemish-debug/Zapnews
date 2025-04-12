@@ -470,3 +470,28 @@ h2 {
     text-decoration: underline;
 }
 
+/* READ MORE NEWS CSS */
+.reader-wrapper {
+    max-width: 900px;
+    margin: 3rem auto;
+    background: #ffffff;
+    padding: 2rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+}
+
+.reader-wrapper h1 {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+.reader-wrapper a.back {
+    display: inline-block;
+    margin-bottom: 1rem;
+    color: #1e90ff;
+    text-decoration: none;
+}
+
+.reader-wrapper a.back:hover {
+    text-decoration: underline;
+}

@@ -7,7 +7,7 @@
         <div class="news-grid">
             {% for article in news_items %}
                 <div class="news-card">
-                    <a href="{{ article.link }}" target="_blank">
+                    <a href="{{ url_for('read_news') }}?url={{ article.link | urlencode }}" class="news-article">
                         <h3>{{ article.title }}</h3>
                         <span class="news-link">Read more →</span>
                     </a>

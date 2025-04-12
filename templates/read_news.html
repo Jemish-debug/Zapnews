@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block body %}
+    <div class="reader-wrapper">
+        <a href="javascript:history.back()" class="back">← Back to News</a>
+        <div class="news-content">
+            {{ content|safe }}
+        </div>
+        <p style="margin-top: 2rem;"><strong>Source:</strong> <a href="{{ source_url }}" target="_blank">{{ source_url }}</a></p>
+    </div>
+{% endblock body %}   

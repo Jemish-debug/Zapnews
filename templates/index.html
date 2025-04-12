@@ -21,14 +21,14 @@
             <h1 id="top-header">Top News</h1>
             <!-- Top 3 News Items -->
             <div class="top-3">
-                {% for article in news_items[:3] %}
+                {% for article in news_items %}
                 <div class="top-3-div">
-                    <a href="{{ article.link }}" class="news-article" target="_blank">
-                        <h3 class="news-title">{{ article.title }}</h3>
-                        <span class="news-link">Read more →</span>
-                    </a>
+                  <a href="{{ url_for('read_news') }}?url={{ article.link | urlencode }}" class="news-article">
+                    <h3 class="news-title">{{ article.title }}</h3>
+                    <span class="news-link">Read more →</span>
+                  </a>
                 </div>
-                {% endfor %}
+              {% endfor %}
             </div>
             
 
@@ -36,7 +36,7 @@
             <div class="top-7">
                 {% for article in news_items[3:10] %}
                 <div class="top-7-div">
-                    <a href="{{ article.link }}" class="news-article" target="_blank">
+                    <a href="{{ url_for('read_news') }}?url={{ article.link | urlencode }}" class="news-article">
                         <h4 class="news-title">{{ article.title }}</h4>
                         <span class="news-link">Read more →</span>
                     </a>
