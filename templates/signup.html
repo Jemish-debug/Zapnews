@@ -1,32 +1,44 @@
-{% extends "base.html" %}
+{% extends "userBase.html" %}
 {% block body %}
     <div class="auth-page">
         <div class="auth-box">
             <h1>Signup</h1>
             <p>Create your account to get started with personalized news.</p>
-
+        
             <form method="POST" action="{{ url_for('signupValue') }}{% if step %}?step={{ step }}{% endif %}">
                 <label for="name">Name</label>
-                <input type="text" id="name" name="name" placeholder="Enter your name" required>
-
+                <input type="text" id="name" name="name" placeholder="Enter your name" required value="{{ name or '' }}">
+            
                 <label for="email">Email Address</label>
-                <input type="email" id="email" name="email" placeholder="Enter your email" required>
-
+                <input type="email" id="email" name="email" placeholder="Enter your email" required value="{{ email or '' }}">
+            
                 <label for="password">Password</label>
-                <input type="password" id="password" name="password" placeholder="Enter your password" required>
-
-                <!-- Always show OTP field, backend will decide if it's needed -->
-                <label for="otp">Enter OTP</label>
-                <input type="text" id="otp" name="otp" placeholder="Enter the OTP" maxlength="6">
-
+                <input type="password" id="password" name="password" placeholder="Enter your password" required value="{{ password or '' }}">
+            
+                <!-- OTP Field -->
+                {% if step == 'verify' %}
+                    <label for="otp">Enter OTP</label>
+                    <input type="text" id="otp" name="otp" placeholder="Enter the OTP" maxlength="6" required>
+                {% endif %}
+            
                 {% if message %}
-                    <p class="{{ 'success-message' if 'successful' in message else 'error-message' }}">
+                    <p class="{{ 'success-message' if message == 'Signup is successful' else 'error-message' }}">
                         {{ message }}
                     </p>
+
+                    {% if message and 'successful' in message.lower() %}
+                        <script>
+                            setTimeout(function() {
+                                window.location.href = "{{ url_for('userPreference') }}?email={{ email }}&name={{ name }}";
+                            }, 3000);
+                        </script>
+                    {% endif %}
+
                 {% endif %}
 
+                
                 <button type="submit" class="btn-primary">Signup</button>
-
+                
                 <p class="switch-link">Already have an account? <a href="{{ url_for('loginValue') }}">Login</a></p>
             </form>
         </div>

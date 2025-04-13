@@ -64,7 +64,7 @@ def generate_and_send_otp(name, email):
     otp_store[email] = otp
     subject = "ZapNews Signup OTP Verification"
     body = f"Hello {name},\n\nYour OTP for ZapNews signup is: {otp}\n\nPlease enter this code to complete your signup."
-    send_email("your_email@gmail.com", "your_app_password", email, subject, body)
+    send_email("koladiajemish@gmail.com", "cufc scjo owzx brxv", email, subject, body)
     print(f"OTP sent to {email}: {otp}")
     return "OTP sent to your email."
 

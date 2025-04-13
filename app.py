@@ -1,5 +1,7 @@
 from flask import Flask, render_template, request, redirect, url_for
 import json
+import time
+import random
 import fetch
 import login
 import signup
@@ -10,7 +12,7 @@ import requests
 from bs4 import BeautifulSoup
 
 app = Flask(__name__)
-
+otp_timestamps = {}
 fetch.fetchHeadlines()
 
 #<-------------- LOGIN FUNCTION -------------->
@@ -38,16 +40,27 @@ def signupValue():
         name = request.form['name']
         email = request.form['email']
         password = request.form['password']
+        otp = request.form.get('otp')
+        step = request.args.get('step')
 
-        print(f"Signup attempt - Name: {name}, Email: {email}, Password: {password}")
-        res = signup.signupAuthentication(name, email, password)
-        print("Signup: ", res)
+        # STEP 1: Generate and send OTP
+        if step != 'verify':
+            now = time.time()
+            last_sent = otp_timestamps.get(email, 0)
 
-        if res == "Signup is successful":
-            return render_template("signup.html", message=res, email=email, name=name)
-        else:
-            return render_template("signup.html", message=res)
+            if now - last_sent > 30:
+                otp_timestamps[email] = now
+                msg = signup.generate_and_send_otp(name, email)
+                return render_template("signup.html", message=msg, step='verify', name=name, email=email, password=password)
+            else:
+                return render_template("signup.html", message="Please wait before resending OTP.", step='verify', name=name, email=email, password=password)
 
+        # STEP 2: Verify OTP and register
+        if step == 'verify':
+            result = signup.signupAuthentication(name, email, password, entered_otp=otp)
+            return render_template("signup.html", message=result, name=name, email=email, password=password)
+
+    # GET Request
     return render_template("signup.html")
 #<------------------------------------------------------>
 

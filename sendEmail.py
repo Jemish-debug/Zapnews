@@ -20,13 +20,13 @@ def send_email(sender_email, sender_password, receiver_email, subject, body):
     except Exception as e:
         print(f"❌ Failed to send email: {e}")
 
-send_email(
-    sender_email="koladiajemish@gmail.com",
-    sender_password="cufc scjo owzx brxv",
-    receiver_email="manaspathak100@gmail.com",
-    subject="Chicken Pox",
-    body="Kesa hai?"
-)
+# send_email(
+#     sender_email="koladiajemish@gmail.com",
+#     sender_password="cufc scjo owzx brxv",
+#     receiver_email="manaspathak100@gmail.com",
+#     subject="Chicken Pox",
+#     body="Kesa hai?"
+# )
 
 # send_email(
 #     sender_email="koladiajemish@gmail.com",
