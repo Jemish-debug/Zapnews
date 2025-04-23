@@ -3,7 +3,6 @@ from bs4 import BeautifulSoup
 import json
 
 def is_article_link(link):
-    # Heuristic to detect actual article URLs
     return "/articleshow/" in link or "/news/" in link or "/article/" in link or "/story/" in link
 
 def fetch_news(url, category):
@@ -26,8 +25,6 @@ def fetch_news(url, category):
                 link = "https://timesofindia.indiatimes.com" + link
             elif "indianexpress" in url:
                 link = "https://indianexpress.com" + link
-            elif "hindustantimes" in url:
-                link = "https://www.hindustantimes.com" + link
 
         # Filter out non-article pages
         if is_article_link(link):
@@ -53,26 +50,23 @@ def save_news_by_category(category, urls):
     print(f"✅ Saved {len(all_articles)} {category.title()} articles to {filename}")
 
 
-# 🔎 Category source URLs
+# Category source URLs
 categories = {
     "technology": [
         "https://timesofindia.indiatimes.com/technology",
-        "https://www.hindustantimes.com/technology-news",
         "https://indianexpress.com/section/technology/"
     ],
     "politics": [
         "https://timesofindia.indiatimes.com/india",
-        "https://www.hindustantimes.com/india-news",
         "https://indianexpress.com/section/political-pulse/"
     ],
     "articles": [
         "https://timesofindia.indiatimes.com/blogs",
-        "https://www.hindustantimes.com/opinion",
         "https://indianexpress.com/section/opinion/"
     ]
 }
 
 
-# 🔁 Run the fetch and save process
+# Run the fetch and save process
 for category, sources in categories.items():
     save_news_by_category(category, sources)

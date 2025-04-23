@@ -12,7 +12,6 @@ def savePreferences(email, selected_categories):
         cur = con.cursor()
 
         for category in selected_categories:
-            # Normalize category for case-insensitive match
             cur.execute("SELECT id FROM preferences WHERE LOWER(category_name) = %s", (category.lower(),))
             result = cur.fetchone()
             print(f"[DEBUG] Looking up category '{category}' → Result: {result}")

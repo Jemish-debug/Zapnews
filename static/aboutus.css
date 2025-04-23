@@ -1,0 +1,176 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=News+Cycle:wght@400;700&family=Poiret+One&family=Sanchez:ital@0;1&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background-color: #E0E0E0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+}
+
+.parent-header{
+    position: sticky;
+    top: 0;
+    z-index: 1;
+}
+
+.header {
+    background-color: #607D8B;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+.header img {
+    color: #FEFBD8;
+    font-size: 2.5rem;
+    text-align: center;
+    animation: slideDown 0.5s ease-out;
+    width: 150px;
+    padding: 2px;
+}
+
+.User{
+    position: absolute;
+    right: 0;
+}
+
+.User strong{
+    padding: 10px;
+}
+
+.User a{
+    background: rgba(255, 255, 255, 0.31);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.7px);
+    -webkit-backdrop-filter: blur(7.7px);
+    cursor: pointer;
+    padding: 9px;
+    text-decoration: none;
+    color: black;
+    font-family: "Sanchez", serif;
+    
+}
+
+.User a:hover{
+    background: rgba(255, 255, 255, 0.31);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgb(22, 50, 49);
+    backdrop-filter: blur(7.7px);
+    -webkit-backdrop-filter: blur(7.7px);
+    cursor: pointer;
+    padding: 9px;
+}
+
+.navi nav {
+    background-color: wheat;
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+}
+
+.navi nav p {
+    padding: 0.5rem 1rem;
+    transition: all 0.3s ease;
+    position: relative;
+}
+
+.navi nav p:hover {
+    transform: translateY(-3px);
+    cursor: pointer;
+}
+
+.navi nav p::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background-color: #607D8B;
+    transition: width 0.3s ease;
+}
+
+.navi nav p:hover::after {
+    width: 100%;
+}
+
+.allfather-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.infoscroll {
+    background-color: #607D8B;
+    padding: 2rem;
+    border-radius: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #FEFBD8;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    margin-bottom: 2rem;
+    animation: fadeIn 1s ease-in;
+    text-align: center  ;
+}
+
+.infocontainer{
+    text-align: center;
+}
+
+.infocontainer h1{
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+.empty{
+    padding: 20px;
+}
+
+.info-main{
+    background-color: #607D8B;
+    padding: 2rem;
+    border-radius: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #FEFBD8;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    margin-bottom: 2rem;
+    animation: fadeIn 1s ease-in;
+    text-align: center  ;
+    width: 50%;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+}
+
+.info-main p{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.info-main:hover{
+    transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+}
+
+
+
+.card-pair{
+    display: flex;
+    justify-content: space-between;
+}
+
+
+.legal{
+    text-align: center;
+    color: rgb(106, 106, 106);
+    padding-bottom: 2px;
+}
+

@@ -165,5 +165,14 @@ def articles():
     news_items = load_news_from_file('data\\articles_news.json')
     return render_template('articlesNews.html', category='Articles', news_items=news_items)
 
+
+@app.route('/aboutus')
+def aboutUs():
+    return render_template('aboutus.html')
+
+@app.route('/contactus')
+def contactUs():
+    return render_template('contactus.html')
+
 if __name__ == "__main__":
     app.run(debug=True)

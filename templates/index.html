@@ -4,12 +4,12 @@
     <div class="allfather-container">
         <div class="infocontainer">
             <div class="infoscroll">
-                <h1>Faster Than Gossip. Sharper Than Truth.⚡</h1>
+                <h1>Faster Than <span class="typeword">Gossip</span>. Sharper Than <span class="typeword">Truth</span>.⚡</h1>
             </div>
             {% if username %}
                 <div style="text-align: center; margin-top: 20px;">
                     <h2 style="font-size: 2.2rem; font-weight: bold; color: #333;">
-                        Welcome, <span style="color: #1e90ff;">{{ username }}</span> 👋
+                        Welcome, <span style="color: #7d84b2;">{{ username }}</span> 👋
                     </h2>
                     <p style="font-size: 1.1rem; color: #777;">Glad to have you here!</p>
                 </div>
@@ -19,7 +19,7 @@
         
         <div class="newsgrid">
             <h1 id="top-header">Top News</h1>
-            <!-- Top 3 News Items -->
+            
             <div class="top-3">
                 {% for article in news_items %}
                 <div class="top-3-div">
@@ -32,7 +32,7 @@
             </div>
             
 
-            <!-- Top 7 News Items (4-10) -->
+            
             <div class="top-7">
                 {% for article in news_items[3:10] %}
                 <div class="top-7-div">

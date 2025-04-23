@@ -1,5 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Cormorant+SC:wght@300;400;500;600;700&family=News+Cycle:wght@400;700&family=Poiret+One&family=Sanchez:ital@0;1&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Special+Gothic+Expanded+One&display=swap');
 * {
     margin: 0;
     padding: 0;
@@ -19,7 +19,7 @@ body {
 }
 
 .header {
-    background-color: #607D8B;
+    background-color: #7d84b2;
     box-shadow: 0 2px 10px rgba(0,0,0,0.1);
     display: flex;
     justify-content: center;
@@ -36,22 +36,53 @@ body {
     padding: 2px;
 }
 
+.User{
+    position: absolute;
+    right: 0;
+}
 
+.User strong{
+    padding: 10px;
+}
 
-.navi nav {
-    background-color: wheat;
+.User a{
+    background: rgba(255, 255, 255, 0.31);
+    border-radius: 16px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    backdrop-filter: blur(7.7px);
+    -webkit-backdrop-filter: blur(7.7px);
+    cursor: pointer;
+    padding: 9px;
+    text-decoration: none;
+    color: black;
+    font-family: "Sanchez", serif;
+    
+}
+
+.User a:hover{
+    background: rgba(255, 255, 255, 0.31);
+    border-radius: 16px;
+    box-shadow: 0 4px 30px rgb(22, 50, 49);
+    backdrop-filter: blur(7.7px);
+    -webkit-backdrop-filter: blur(7.7px);
+    cursor: pointer;
+    padding: 9px;
+}
+
+.navi nav{
+    background-color: #d9dbf1;
     display: flex;
     justify-content: center;
     gap: 2rem;
 }
 
-.navi nav p {
+.navbar a{
     padding: 0.5rem 1rem;
     transition: all 0.3s ease;
     position: relative;
 }
 
-.navi nav p:hover {
+.navbar a:hover {
     transform: translateY(-3px);
     cursor: pointer;
 }
@@ -71,6 +102,19 @@ body {
     width: 100%;
 }
 
+.navbar a{
+    font-size: x-large;
+    color: #613dc1;
+    font-weight:500;
+    text-decoration: none;
+    padding: 5px;
+    padding-inline: 5px;
+}
+
+.navbar a:hover{
+    font-weight: bold;
+}
+
 .allfather-container {
     max-width: 1200px;
     margin: 2rem auto;
@@ -78,7 +122,7 @@ body {
 }
 
 .infoscroll {
-    background-color: #607D8B;
+    background-color: #7d84b2;
     text-align: center;
     padding: 2rem;
     border-radius: 10px;
@@ -108,7 +152,7 @@ body {
 }
 
 .top-3-div {
-    background-color: rgb(89, 139, 232);
+    background-color: #f8f7ff;
     padding: 1.5rem;
     border-radius: 10px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
@@ -119,6 +163,7 @@ body {
 }
 
 .top-3-div:hover {
+    background-color: #8e9dcc;  
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(0,0,0,0.2);
 }
@@ -130,7 +175,7 @@ body {
 }
 
 .top-7-div {
-    background-color: rgb(232, 89, 192);
+    background-color: #f8f7ff;
     padding: 1.5rem;
     border-radius: 10px;
     transition: all 0.3s ease;
@@ -140,8 +185,14 @@ body {
     justify-content: space-between;
 }
 
+.top-7-div:hover {
+    background-color: #8e9dcc;
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
 .news-article {
-    color: white;
+    color: black;
     text-decoration: none;
     display: block;
     height: 100%;
@@ -494,4 +545,294 @@ h2 {
 
 .reader-wrapper a.back:hover {
     text-decoration: underline;
+}
+
+/* IDK */
+/* Base styles */
+.infoscroll h1 {
+    font-family: 'Courier New', monospace;
+    white-space: nowrap;
+    line-height: 1.2;
+  }
+  
+  /* Typewriter word container */
+  .typeword {
+    display: inline-block;
+    position: relative;
+    overflow: hidden;
+    vertical-align: bottom;
+    width: 0;
+  }
+  
+  /* Animation for "Gossip" (6 letters) */
+  .typeword:nth-child(1) {
+    animation: typing-gossip 1.5s steps(6) 0.5s forwards;
+  }
+  
+  /* Animation for "Truth" (5 letters) */
+  .typeword:nth-child(2) {
+    animation: typing-truth 1.2s steps(5) 2s forwards;
+  }
+  
+  /* Cursor styling */
+  .typeword::after {
+    content: "";
+    position: absolute;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #FEFBD8;
+  }
+  
+  /* Cursor animations */
+  .typeword:nth-child(1)::after {
+    animation: 
+      blink 0.7s step-end infinite,
+      hide-cursor 0.1s 2s forwards;
+  }
+  
+  .typeword:nth-child(2)::after {
+    animation: 
+      blink 0.7s step-end infinite 2s,
+      hide-cursor 0.1s 3.2s forwards;
+  }
+  
+  /* Keyframes */
+  @keyframes typing-gossip {
+    to { width: 6ch; }
+  }
+  
+  @keyframes typing-truth {
+    to { width: 5ch; }
+  }
+  
+  @keyframes blink {
+    from, to { opacity: 0; }
+    50% { opacity: 1; }
+  }
+  
+  @keyframes hide-cursor {
+    to { visibility: hidden; }
+  }
+  
+  /* Force final state */
+  .typeword {
+    animation-fill-mode: forwards !important;
+  }
+  
+.tech-stack{
+    font-size: x-large;
+}
+
+.frontend{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.htmllogo{
+    width: 250px;
+    height: 70%;
+}
+
+.csslogo{
+    width: 200px;
+}
+
+.backendlogo{
+    width: 700px;
+}
+
+.vscodelogo{
+    width: 500px;
+}
+
+.toilogo{
+    width: 200px;
+}
+
+.ielogo{
+    width: 500px;
+}
+
+.htlogo{
+    width: 200px;
+}
+
+.sources{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.left-section img{
+    width: 200px;
+}
+
+
+.middle-section{
+    font-size: large;
+    width: 50%;
+    text-align: center;
+}
+
+.middle-section span:hover{
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+}
+
+.right-section{
+    text-align: center;
+}
+
+.right-section span{
+    padding: 2px;
+}
+
+.feature-card{
+    background-color: #d9dbf1;
+    padding: 2rem;
+    border-radius: 15px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #000000;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    margin-bottom: 2rem;
+    animation: fadeIn 1s ease-in;
+    width: 45%;
+    font-family: Arial, Helvetica, sans-serif;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.5s ease;
+    margin: 30px auto;
+}
+
+.feature-card::before {
+    content: '';
+    position: absolute;
+    top: -50%;  
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: linear-gradient(
+      0deg, 
+      transparent, 
+      transparent 30%, 
+      #afb3f0aa
+    );
+    transform: rotate(-45deg);
+    transition: all 0.5s ease;
+    opacity: 0;
+  }
+  
+  .feature-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #7d83e0;
+  }
+  
+  .feature-card:hover::before {
+    opacity: 1;
+    transform: rotate(-45deg) translateY(100%);
+  }
+
+ .empty{
+    padding: 20px;
+}
+
+  .info-main{
+    background-color: #d9dbf1;
+    padding: 2rem;
+    border-radius: 10px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: black;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    margin-bottom: 2rem;
+    animation: fadeIn 1s ease-in;
+    text-align: center  ;
+    width: 50%;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+}
+  .info-main p{
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: large;
+}
+
+.info-main h2{
+    font-size:x-large;
+}
+
+.info-main:hover{
+    transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+}
+
+.infocontainer{
+    text-align: center;
+}
+
+.infocontainer h1{
+    font-family: "Special Gothic Expanded One", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+}
+
+
+
+.card-pair{
+    display: flex;
+    justify-content: space-between;
+}
+
+/* CONTACT US */
+
+.allfather-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.empty{
+    padding: 20px;
+}
+
+.cardpair{
+    display: flex;
+}
+
+.card{
+    background-color: #d9dbf1;
+    padding: 2rem;
+    border-radius: 10px;
+    font-family: G;
+    color: black;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    margin-bottom: 2rem;
+    animation: fadeIn 1s ease-in;
+    text-align: center  ;
+    width: 30%;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+    -webkit-transition: all 0.3s ease;
+
+}
+
+.circular-img {
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+
+.card p{
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.card h1{
+    font-size: x-large;
+}
+
+.card:hover{
+    transform: scale(1.1);
+  -webkit-transform: scale(1.1);
 }
