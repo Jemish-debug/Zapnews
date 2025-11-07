@@ -1,14 +1,26 @@
+![ZapNews Banner](https://via.placeholder.com/1200x300.png?text=ZapNews+-+Personalized+News+Platform)
+
 # ZapNews
 
 A personalized news aggregation platform that curates and displays articles based on user-selected interests. ZapNews focuses on *relevance over overload* by filtering content from multiple RSS news sources and presenting it in an organized, user-friendly interface.
 
 ---
 
+### 🔗 Badges
+
+![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
+![Flask](https://img.shields.io/badge/Flask-Backend-black)
+![MySQL](https://img.shields.io/badge/Database-MySQL-blue)
+![License: MIT](https://img.shields.io/badge/License-MIT-green)
+![Status](https://img.shields.io/badge/Status-Active-success)
+
+---
+
 ## 🌟 Key Features
-- **Personalized Feeds:** Users receive news based on their chosen categories.
-- **Real-Time Aggregation:** Fetches the latest articles from multiple RSS feeds.
-- **Clean & Responsive UI:** Clear, structured layout for easy browsing.
-- **Scalable Backend:** Built for future expansion and intelligent recommendation systems.
+- **Personalized News Feeds** based on user-selected categories.
+- **Real-Time RSS Aggregation** to fetch the latest articles instantly.
+- **Clean & Responsive UI** for seamless browsing.
+- **Scalable Backend** to support enhanced AI/NLP-based features in the future.
 
 ---
 
@@ -18,26 +30,9 @@ A personalized news aggregation platform that curates and displays articles base
 | Backend | Python, Flask |
 | Frontend | HTML, CSS |
 | Database | MySQL |
-| Data Source | RSS Feed Integration |
+| News Source | RSS Integration |
 
 ---
-
-## 🧭 System Architecture
-
-```mermaid
-graph TD
-    User[User] --> UI[Frontend (HTML/CSS)]
-    UI --> Backend[Flask Backend]
-    Backend --> DB[(MySQL Database)]
-    Backend --> RSS[(RSS News Sources)]
-    RSS --> Backend
-```
-
-The workflow follows:
-1. User interacts with the UI to select news categories.
-2. The system gathers articles from various RSS providers.
-3. Content is filtered and stored/retrieved from MySQL.
-4. Results are displayed to the user in a clean, organized layout.
 
 ---
 
