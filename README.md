@@ -4,10 +4,6 @@
 
 A personalized news aggregation platform that curates and displays articles based on user-selected interests. ZapNews focuses on *relevance over overload* by filtering content from multiple RSS news sources and presenting it in an organized, user-friendly interface.
 
----
-
-### 🔗 Badges
-
 ![Python](https://img.shields.io/badge/Python-3.8%2B-blue)
 ![Flask](https://img.shields.io/badge/Flask-Backend-black)
 ![MySQL](https://img.shields.io/badge/Database-MySQL-blue)
