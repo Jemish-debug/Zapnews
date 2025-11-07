@@ -25,12 +25,12 @@ A personalized news aggregation platform that curates and displays articles base
 ## 🧭 System Architecture
 
 ```mermaid
-graph TD;
-    User(User) --> UI[Frontend (HTML/CSS)]
-    UI --> Flask[Flask Backend]
-    Flask --> DB[(MySQL Database)]
-    Flask --> RSS[RSS News Sources]
-    RSS --> Flask
+graph TD
+    User[User] --> UI[Frontend (HTML/CSS)]
+    UI --> Backend[Flask Backend]
+    Backend --> DB[(MySQL Database)]
+    Backend --> RSS[(RSS News Sources)]
+    RSS --> Backend
 ```
 
 The workflow follows:
