@@ -1,4 +1,4 @@
-![ZapNews Banner](https://via.placeholder.com/1200x300.png?text=ZapNews+-+Personalized+News+Platform)
+![ZapNews Logo](https://github.com/Jemish-debug/Zapnews/blob/main/static/Content/logo.png)
 
 # ZapNews
 
