@@ -1,4 +1,4 @@
-![ZapNews Logo](https://github.com/Jemish-debug/Zapnews/blob/main/static/Content/logo.png)
+![ZapNews Logo](https://github.com/Jemish-debug/Zapnews/blob/main/static/Content/logo.jpg)
 
 # ZapNews
 
